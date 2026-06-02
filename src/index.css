@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-color: #FAF6F0; /* Bege claro acolhedor */
+  --primary-color: #D49A9A; /* Rosa antigo */
+  --primary-hover: #C58383;
+  --accent-color: #C5A059; /* Dourado envelhecido */
+  --text-dark: #4A4036;
+  --text-light: #8A7E74;
+  --white: #FFFFFF;
+  --border-color: #E6DFD3;
+  --error-color: #E06D6D;
+  
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Base Form Styles */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  background-color: var(--white);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(212, 154, 154, 0.2);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-social {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--white);
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  margin-top: 1rem;
+}
+
+.btn-social:hover {
+  background-color: var(--bg-color);
+  border-color: var(--accent-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  background-color: rgba(224, 109, 109, 0.1);
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Split layout */
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.auth-image-side {
+  flex: 1;
+  background-color: var(--bg-color);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-right: 1px solid var(--border-color);
+}
+
+@media (min-width: 768px) {
+  .auth-image-side {
+    display: flex;
+  }
+}
+
+.auth-image-side img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+.auth-form-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  background-color: var(--white);
+}
+
+.auth-form-wrapper {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.logo-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-header h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.logo-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.divider:not(:empty)::before {
+  margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+  margin-left: .5em;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
